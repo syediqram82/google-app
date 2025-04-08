@@ -14,18 +14,21 @@ import {BottomTabNavBar} from './navigation/components/BottomTabNavbar';
 import {NavigationContainer} from '@react-navigation/native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {BottomSheetProvider} from './context/BottomSheetContext';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <NavigationContainer>
-        <PaperProvider>
-          <ThemeProvider theme={BaseTheme}>
-            <BottomSheetProvider>
-              <BottomTabNavBar />
-            </BottomSheetProvider>
-          </ThemeProvider>
-        </PaperProvider>
+        <SafeAreaProvider>
+          <PaperProvider>
+            <ThemeProvider theme={BaseTheme}>
+              <BottomSheetProvider>
+                <BottomTabNavBar />
+              </BottomSheetProvider>
+            </ThemeProvider>
+          </PaperProvider>
+        </SafeAreaProvider>
       </NavigationContainer>
     </GestureHandlerRootView>
   );
