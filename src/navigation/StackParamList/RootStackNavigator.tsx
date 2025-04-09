@@ -5,9 +5,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {NavigatorScreenParams} from '@react-navigation/native';
 
+export enum QueryType {
+  TEXT = 'TEXT',
+  IMAGE = 'IMAGE',
+}
+
 export type SearchStackParamList = {
   Search: undefined;
-  SearchResults: {query: string};
+  SearchResults: {query: string; queryType: QueryType};
   VoiceSearch: undefined;
 };
 

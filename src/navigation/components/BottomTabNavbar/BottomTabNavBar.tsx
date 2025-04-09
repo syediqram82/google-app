@@ -2,7 +2,6 @@ import {BottomNavigation} from 'react-native-paper';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {HomeScreen} from '@/screens/main/HomeScreen';
-import {SearchScreen} from '@/screens/main/SearchScreen';
 import {SavedItemScreen} from '@/screens/main/SavedItemsScreen';
 import {CommonActions} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';

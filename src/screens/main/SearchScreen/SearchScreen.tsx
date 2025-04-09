@@ -4,8 +4,6 @@ import {Box} from '@/components/styled/Box';
 import {useNavigation} from '@react-navigation/native';
 import {BASE_COLORS} from 'theme/elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-
-// Import components
 import {SearchBar} from './components/SearchBar';
 import {
   SearchList,
@@ -62,6 +60,8 @@ export const SearchScreen = () => {
         value={searchText}
         onChangeText={setSearchText}
         onBackPress={handleBack}
+        variant="standard"
+        type={'TEXT'}
       />
 
       <SearchList
