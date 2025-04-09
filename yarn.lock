@@ -6148,6 +6148,11 @@ react-is@^19.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-19.1.0.tgz#805bce321546b7e14c084989c77022351bbdd11b"
   integrity sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==
 
+react-native-camera-kit@^14.2.0:
+  version "14.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera-kit/-/react-native-camera-kit-14.2.0.tgz#69fec729cfc9d40dc3904098965c6a2bf56b444f"
+  integrity sha512-rPk/4Ux52/Kc6oIPk0x6NsrvDkeL+kd/GAUJ4xBtTlnmiWjLTgeA2Vjgg9ik03mmyf6rV+LaqaOBT7KejhuHKQ==
+
 react-native-gesture-handler@^2.25.0:
   version "2.25.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.25.0.tgz#3a5a8912ea4f5e68ab211a9fa5a191c08ad50883"
@@ -6156,6 +6161,11 @@ react-native-gesture-handler@^2.25.0:
     "@egjs/hammerjs" "^2.0.17"
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
+
+react-native-image-picker@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-8.2.0.tgz#d8656fdd1a0f1ad262c9c129d4f75900b685e56e"
+  integrity sha512-jIGllQJuJIn0YKss/JEeb0Kos1HSsnIpU+i3bYxR27sOxSyDZQyP9dKR22olssQPlfH+rGNR/Jc6xKRkhm48vw==
 
 react-native-is-edge-to-edge@1.1.6:
   version "1.1.6"
@@ -6240,6 +6250,11 @@ react-native-vector-icons@^10.2.0:
   dependencies:
     prop-types "^15.7.2"
     yargs "^16.1.1"
+
+react-native-vision-camera@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/react-native-vision-camera/-/react-native-vision-camera-4.6.4.tgz#f1c51dda2c5d558ea0ec235e2401abf5efa46875"
+  integrity sha512-d998uTHsGJ9bTlsClgT37RK1sK7ZQekv5y6ylynds3vmdK6YbFQJUoi2cvMrFN4dp9qvSlCjEfwekjMIz3guQA==
 
 react-native-voice-to-text@^0.1.4:
   version "0.1.4"

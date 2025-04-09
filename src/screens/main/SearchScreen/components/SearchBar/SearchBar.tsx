@@ -38,7 +38,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleGoogleLens = () => {
-    navigation.navigate('GoogleLens');
+    navigation.navigate('Lens');
   };
 
   const handleSearchPress = () => {

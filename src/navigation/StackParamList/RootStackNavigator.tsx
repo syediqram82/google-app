@@ -4,6 +4,7 @@ import {VoiceSearchScreen} from '@/screens/main/VoiceSearchScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {NavigatorScreenParams} from '@react-navigation/native';
+import {Lens} from '@/screens/main/Lens/Lens';
 
 export enum QueryType {
   TEXT = 'TEXT',
@@ -14,6 +15,7 @@ export type SearchStackParamList = {
   Search: undefined;
   SearchResults: {query: string; queryType: QueryType};
   VoiceSearch: undefined;
+  Lens: undefined;
 };
 
 export type RootStackParamList = {
@@ -40,6 +42,11 @@ export const SearchStackNavigator = () => {
       <SearchStack.Screen
         name="VoiceSearch"
         component={VoiceSearchScreen}
+        options={{headerShown: false}}
+      />
+      <SearchStack.Screen
+        name="Lens"
+        component={Lens}
         options={{headerShown: false}}
       />
     </SearchStack.Navigator>
