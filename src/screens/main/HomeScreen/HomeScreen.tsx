@@ -31,19 +31,18 @@ export const HomeScreen = () => {
           source={require('@/assets/png/google-logo.png')}
           alignSelf={'center'}
           height={90}
-          width={160}
+          width={120}
         />
         <Box paddingX={'md'}>
           <HomeSearchBar />
         </Box>
 
+        <QuickLinksList />
         <Box
-          paddingX={'md'}
-          paddingBottom={'2xl'}
+          paddingTop={'2xl'}
           borderBottomWidth={0.5}
-          borderBottomColor={'textPrimary'}>
-          <QuickLinksList />
-        </Box>
+          borderBottomColor={'textPrimary'}
+        />
 
         <Box style={{gap: 20, paddingBottom: insets.bottom}} marginTop={10}>
           <InfoCardList />

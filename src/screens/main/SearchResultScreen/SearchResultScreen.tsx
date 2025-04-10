@@ -6,7 +6,7 @@ import {SearchTabView} from './components/SearchTabView';
 import {QueryType} from '@/navigation/StackParamList/RootStackNavigator';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useState} from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, Text} from 'react-native';
 
 interface SearchResultScreenProps {
   customParams?: {

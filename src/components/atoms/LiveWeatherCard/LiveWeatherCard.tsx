@@ -1,8 +1,7 @@
 import {Box} from '@/components/styled/Box';
 import {Text} from '@/components/styled/Text';
 import {Row} from '@/components/styled/Row';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {BASE_COLORS} from 'theme/elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface LiveWeatherCardProps {
   location?: string;
@@ -11,9 +10,9 @@ interface LiveWeatherCardProps {
 }
 
 export const LiveWeatherCard: React.FC<LiveWeatherCardProps> = ({
-  location = 'Ghaziabad',
-  temperature = 24,
-  weatherIcon = 'weather-night',
+  location = 'Gurugram',
+  temperature = 32,
+  weatherIcon = 'sunny',
 }) => {
   return (
     <Box
@@ -37,7 +36,7 @@ export const LiveWeatherCard: React.FC<LiveWeatherCardProps> = ({
         <Text color="textPrimary" fontSize={28} fontWeight="bold">
           {temperature}°
         </Text>
-        <Icon name={weatherIcon} size={32} color={BASE_COLORS.accentBlue} />
+        <Icon name={weatherIcon} size={32} color={'#FFD700'} />
       </Row>
     </Box>
   );

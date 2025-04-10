@@ -37,10 +37,10 @@ export const SearchTabView: React.FC<SearchTabViewProps> = ({
   const renderScene = SceneMap({
     all: () => <AllTabContent query={query} queryType={queryType} />,
     images: () => <ImagesTabContent query={query} />,
-    videos: () => <EmptyTabContent tabName="Videos" query={query} />,
-    shopping: () => <EmptyTabContent tabName="Shopping" query={query} />,
-    news: () => <EmptyTabContent tabName="News" query={query} />,
-    forums: () => <EmptyTabContent tabName="Forums" query={query} />,
+    videos: () => <EmptyTabContent />,
+    shopping: () => <EmptyTabContent />,
+    news: () => <EmptyTabContent />,
+    forums: () => <EmptyTabContent />,
   });
 
   const renderTabBar = () => {

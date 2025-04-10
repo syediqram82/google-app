@@ -107,7 +107,6 @@ export const UserBottomSheet = forwardRef<UserBottomSheetRef, {}>(
         enableExpandToFullScreen={true}>
         <BottomSheetScrollView showsVerticalScrollIndicator={false}>
           <Box paddingBottom={'lg'} paddingX={'lg'}>
-            {/* Header with close button and Google logo */}
             <Row
               justifyContent="space-between"
               alignItems="center"

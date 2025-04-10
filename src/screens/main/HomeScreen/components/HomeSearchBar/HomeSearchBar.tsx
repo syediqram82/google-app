@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import GoogleMicIcon from '@/assets/svg/google-mic.svg';
 import GoogleLensIcon from '@/assets/svg/google-lens.svg';
 import {BASE_COLORS} from 'theme/elements';
-import {Row} from '@/components/styled/Row';
 import {RootStackParamList} from '@/navigation/StackParamList/RootStackNavigator';
 import {Button} from '@/components/styled/Button';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -29,32 +28,38 @@ export const HomeSearchBar = () => {
     });
   };
 
+  const handleLensPress = () => {
+    navigation.navigate('Search', {
+      screen: 'Lens',
+    });
+  };
+
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={handleSearchPress}>
       <CenterBox
         borderRadius={'full'}
         width={'100%'}
-        paddingX={'3xl'}
+        paddingX={'lg'}
         backgroundColor={'secondary'}
         paddingY={'md'}
         justifyContent={'space-between'}
         alignSelf={'center'}
         alignItems={'center'}
-        height={80}>
-        <CenterBox justifyContent={'flex-start'} style={{gap: 15}}>
+        height={60}>
+        <CenterBox justifyContent={'flex-start'} style={{gap: 8}}>
           <Icon name={'search'} size={32} color={BASE_COLORS.textSecondary} />
           <Text color={'textSecondary'} fontFamily={'regular'} fontSize={22}>
             Search
           </Text>
         </CenterBox>
-        <Row style={{gap: 10}}>
-          <Button padding={'md'} onPress={handleVoiceSearch}>
-            <GoogleMicIcon width={45} height={45} />
+        <CenterBox style={{gap: 10}}>
+          <Button onPress={handleVoiceSearch}>
+            <GoogleMicIcon width={35} height={35} />
           </Button>
-          <Button padding={'md'}>
-            <GoogleLensIcon width={45} height={45} />
+          <Button onPress={handleLensPress}>
+            <GoogleLensIcon width={35} height={35} />
           </Button>
-        </Row>
+        </CenterBox>
       </CenterBox>
     </TouchableOpacity>
   );

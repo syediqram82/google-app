@@ -2,7 +2,6 @@ import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 import {FeedCard} from '@/components/atoms/FeedCard';
 
-// Sample data based on the screenshots with local placeholder images
 const feedItems = [
   {
     id: '1',
@@ -10,7 +9,7 @@ const feedItems = [
       'Onitsuka Tiger Sneakers Are Still Making Adidas Sweat in the It-Shoe Race, According to Kaia Gerber',
     source: 'Marie Claire Magazine',
     timeAgo: '1d',
-    imageUrl: require('@/assets/png/google-logo.png'), // Replace with your actual image
+    imageUrl: 'https://loremflickr.com/200/300/',
   },
   {
     id: '2',
@@ -20,7 +19,7 @@ const feedItems = [
     timeAgo: '4d',
     videoChannel: 'Peak XV',
     videoLength: '28:48',
-    imageUrl: require('@/assets/png/google-logo.png'), // Replace with your actual image
+    imageUrl: 'https://picsum.photos/200/300?random=2',
   },
   {
     id: '3',
@@ -29,7 +28,7 @@ const feedItems = [
     source: 'Google Cloud',
     timeAgo: '',
     sponsored: true,
-    imageUrl: require('@/assets/png/google-logo.png'), // Replace with your actual image
+    imageUrl: 'https://picsum.photos/200/300?random=3',
   },
   {
     id: '4',
@@ -37,14 +36,14 @@ const feedItems = [
       'Your dream MacBook Pro is now over 70% off — and it even comes with the discontinued Touch Bar',
     source: 'Mashable',
     timeAgo: '9h',
-    imageUrl: require('@/assets/png/google-logo.png'), // Replace with your actual image
+    imageUrl: 'https://picsum.photos/200/300?random=4',
   },
   {
     id: '5',
     title: 'GOOGLE SUMMER OF CODE 2025 CONTRIBUTOR APPLICATIONS NOW OPEN!',
     source: 'Frontlines Media',
     timeAgo: '1d',
-    imageUrl: require('@/assets/png/google-logo.png'), // Replace with your actual image
+    imageUrl: 'https://picsum.photos/200/300?random=5',
   },
 ];
 

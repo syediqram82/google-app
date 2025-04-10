@@ -6,11 +6,7 @@ export const HomeNotification = () => {
   const onPress = () => {};
   return (
     <TouchableOpacity onPress={onPress}>
-      <NotificationIcon
-        width={40}
-        height={40}
-        fill={BASE_COLORS.tabBarIconInactive}
-      />
+      <NotificationIcon width={30} height={30} fill={BASE_COLORS.textPrimary} />
     </TouchableOpacity>
   );
 };

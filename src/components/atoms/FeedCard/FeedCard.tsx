@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  ImageSourcePropType,
-} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Box} from '@/components/styled/Box';
 import {Text} from '@/components/styled/Text';
 import {Row} from '@/components/styled/Row';
@@ -13,7 +8,7 @@ import {BASE_COLORS} from 'theme/elements';
 
 interface FeedCardProps {
   title: string;
-  imageUrl?: ImageSourcePropType;
+  imageUrl?: string;
   source: string;
   timeAgo: string;
   sponsored?: boolean;
@@ -40,7 +35,11 @@ export const FeedCard: React.FC<FeedCardProps> = ({
       {/* Image section (if exists) */}
       {imageUrl && (
         <Box width={'100%'} height={250}>
-          <Image source={imageUrl} style={styles.image} resizeMode="cover" />
+          <Image
+            source={{uri: imageUrl}}
+            style={styles.image}
+            resizeMode="cover"
+          />
           {videoLength && (
             <Box
               position="absolute"

@@ -15,8 +15,8 @@ export const UserButton: React.FC<UserButtonProps> = ({}) => {
     <Button
       onPress={openUserBottomSheet}
       borderRadius="2xl"
-      width={45}
-      height={45}
+      width={35}
+      height={35}
       bg={'accentBlue'}
       display={'flex'}
       justifyContent={'center'}

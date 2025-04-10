@@ -20,8 +20,8 @@ export const QuickLinkItem: React.FC<QuickLinkItemProps> = ({
       justifyContent={'center'}
       alignItems={'center'}
       backgroundColor={BASE_COLORS[bgColor]}
-      width={88}
-      paddingY={16}
+      width={80}
+      paddingY={12}
       borderRadius={'full'}>
       {icon}
     </Button>

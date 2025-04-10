@@ -98,6 +98,7 @@ const CustomTabBar = (props: BottomTabBarProps) => {
           </Box>
         );
       }}
+      //@ts-expect-error
       // eslint-disable-next-line react/no-unstable-nested-components
       getLabelText={({route}) => {
         const focused = props.state.routes[props.state.index].key === route.key;

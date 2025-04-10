@@ -1,68 +1,184 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Image, Dimensions} from 'react-native';
 import {Text} from '@/components/styled/Text';
 import {Box} from '@/components/styled/Box';
+import {Row} from '@/components/styled/Row';
 import {BASE_COLORS} from 'theme/elements';
+import {ThemedImage} from '@/components/styled/ThemedImage';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import {Button} from '@/components/styled/Button';
+import {ThemedScrollView} from '@/components/styled/ScrollView';
 
 interface ImagesTabContentProps {
   query: string;
 }
 
-export const ImagesTabContent: React.FC<ImagesTabContentProps> = ({query}) => {
-  const screenWidth = Dimensions.get('window').width;
-  const columnWidth = (screenWidth - 40) / 3;
+interface ProductItem {
+  id: string;
+  imageUrl: any;
+  title: string;
+  price?: string;
+  store: {
+    name: string;
+    logo: any;
+  };
+}
 
-  const images = [
+export const ImagesTabContent: React.FC<ImagesTabContentProps> = ({}) => {
+  const products: ProductItem[] = [
     {
       id: '1',
-      url: 'https://unsplash.com/photos/MGaFENpDCsw',
-      title: 'Test image 1',
+      imageUrl: 'https://loremflickr.com/200/300/',
+      title:
+        "GuliriFei Women's Two Piece Outfit Short Sleeve V-Neck Knit Top and Pants Set",
+      store: {
+        name: 'Amazon.com',
+        logo: 'https://picsum.photos/200/300',
+      },
     },
-    {id: '2', url: 'https://via.placeholder.com/150', title: 'Test image 2'},
-    {id: '3', url: 'https://via.placeholder.com/150', title: 'Test image 3'},
-    {id: '4', url: 'https://via.placeholder.com/150', title: 'Test image 4'},
-    {id: '5', url: 'https://via.placeholder.com/150', title: 'Test image 5'},
-    {id: '6', url: 'https://via.placeholder.com/150', title: 'Test image 6'},
+    {
+      id: '2',
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Trendyol Striped Cotton Top - Tops for Women',
+      price: '₹659*',
+      store: {
+        name: 'Myntra',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '3',
+      imageUrl: 'https://picsum.photos/200/300',
+      title:
+        "GuliriFei Women's Two Piece Outfit Short Sleeve V-Neck Knit Top and Pants Set",
+      store: {
+        name: 'Amazon.com',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '4',
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Trendyol Striped Cotton Top - Tops for Women',
+      price: '₹659*',
+      store: {
+        name: 'Myntra',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '5',
+      imageUrl: 'https://picsum.photos/200/300',
+      title:
+        "GuliriFei Women's Two Piece Outfit Short Sleeve V-Neck Knit Top and Pants Set",
+      store: {
+        name: 'Amazon.com',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '6',
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Trendyol Striped Cotton Top - Tops for Women',
+      price: '₹659*',
+      store: {
+        name: 'Myntra',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '7',
+      imageUrl: 'https://picsum.photos/200/300',
+      title:
+        "GuliriFei Women's Two Piece Outfit Short Sleeve V-Neck Knit Top and Pants Set",
+      store: {
+        name: 'Amazon.com',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
+    {
+      id: '8',
+      imageUrl: 'https://picsum.photos/200/300',
+      title: 'Trendyol Striped Cotton Top - Tops for Women',
+      price: '₹659*',
+      store: {
+        name: 'Myntra',
+        logo: 'https://picsum.photos/200/300',
+      },
+    },
   ];
 
   return (
-    <ScrollView style={styles.container}>
-      <Box padding="md">
-        <Text color="textPrimary" fontSize={18} fontFamily="medium">
-          Image results for "{query}"
+    <ThemedScrollView flex={1} backgroundColor={'primary'}>
+      <Box padding="md" flexDirection="row" alignItems="center">
+        <Icon name="info-outline" size={20} color={BASE_COLORS.textSecondary} />
+        <Text color="textSecondary" fontSize={14} marginLeft="xs">
+          Results for people are limited
         </Text>
-
-        <Box
-          marginTop="lg"
-          flexDirection="row"
-          flexWrap="wrap"
-          justifyContent="space-between">
-          {images.map(image => (
-            <Box
-              key={image.id}
-              width={columnWidth}
-              marginBottom="md"
-              borderRadius="md"
-              overflow="hidden">
-              <Image
-                source={{uri: image.url}}
-                style={{width: columnWidth, height: columnWidth}}
-                resizeMode="cover"
-              />
-              <Text color="textSecondary" fontSize={12} marginTop="xs">
-                {image.title}
-              </Text>
-            </Box>
-          ))}
-        </Box>
       </Box>
-    </ScrollView>
+      <Box paddingY="md">
+        <Row marginBottom="md">
+          <Box flex={1} flexDirection="row" flexWrap="wrap" style={{gap: 10}}>
+            {products.map(product => (
+              <Button
+                key={product.id}
+                backgroundColor={BASE_COLORS.secondary}
+                width={'48%'}
+                borderRadius="lg"
+                overflow="hidden"
+                marginBottom="xs">
+                <ThemedImage
+                  source={{uri: product.imageUrl}}
+                  $width="100%"
+                  $height={150}
+                  resizeMode="cover"
+                />
+
+                <Box padding="xs">
+                  <Row alignItems="center" marginBottom="xs">
+                    <ThemedImage
+                      source={product.store.logo}
+                      $width={20}
+                      $height={20}
+                      resizeMode="contain"
+                      borderRadius={50}
+                    />
+                    <Text color="textSecondary" fontSize={12} marginLeft="xs">
+                      {product.store.name}
+                    </Text>
+                  </Row>
+                  <Text color="textPrimary" fontSize={12} numberOfLines={2}>
+                    {product.title}
+                  </Text>
+                  {product.price && (
+                    <Box
+                      backgroundColor="primary"
+                      borderRadius="md"
+                      paddingX="sm"
+                      paddingY="xs"
+                      marginTop="xs"
+                      alignSelf="flex-start">
+                      <Row alignItems="center">
+                        <Icon
+                          name="local-offer"
+                          size={12}
+                          color={BASE_COLORS.textPrimary}
+                        />
+                        <Text
+                          color="textPrimary"
+                          fontSize={14}
+                          fontWeight="bold"
+                          marginLeft="xs">
+                          {product.price}
+                        </Text>
+                      </Row>
+                    </Box>
+                  )}
+                </Box>
+              </Button>
+            ))}
+          </Box>
+        </Row>
+      </Box>
+    </ThemedScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: BASE_COLORS.primary,
-  },
-});

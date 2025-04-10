@@ -6,8 +6,7 @@ import TranslateIcon from '@/assets/svg/translate.svg';
 import ImageSearchIcon from '@/assets/svg/image-search.svg';
 import HomeworkIcon from '@/assets/svg/homework.svg';
 import MusicNoteIcon from '@/assets/svg/music-note.svg';
-
-import {Row} from '@/components/styled/Row';
+import {ThemedScrollView} from '@/components/styled/ScrollView';
 
 const QuickLinksItemData: QuickLinkItemProps[] = [
   {
@@ -38,7 +37,11 @@ const QuickLinksItemData: QuickLinkItemProps[] = [
 
 export const QuickLinksList = () => {
   return (
-    <Row justifyContent={'space-between'} marginTop={'lg'}>
+    <ThemedScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{gap: 5, paddingHorizontal: 10}}
+      marginTop={20}>
       {QuickLinksItemData.map(item => (
         <QuickLinkItem
           key={item.id}
@@ -47,6 +50,6 @@ export const QuickLinksList = () => {
           bgColor={item.bgColor}
         />
       ))}
-    </Row>
+    </ThemedScrollView>
   );
 };

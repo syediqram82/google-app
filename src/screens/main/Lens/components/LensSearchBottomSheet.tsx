@@ -41,7 +41,6 @@ export const LensSearchBottomSheet = forwardRef<
 
   const handleSheetChange = useCallback(
     (index: number) => {
-      // Call onClose when the sheet is closed (index -1)
       if (index === -1 && onClose) {
         onClose();
       }
@@ -49,7 +48,6 @@ export const LensSearchBottomSheet = forwardRef<
     [onClose],
   );
 
-  // If no image URI, don't render anything
   if (!imageUri) {
     return null;
   }
@@ -66,14 +64,12 @@ export const LensSearchBottomSheet = forwardRef<
         disablePanToClose={true}
         borderRadius={16}
         onChange={handleSheetChange}>
-        <Box paddingBottom="lg" flex={1} backgroundColor={'primary'}>
-          <SearchResultScreen
-            customParams={{
-              query: imageUri,
-              queryType: QueryType.IMAGE,
-            }}
-          />
-        </Box>
+        <SearchResultScreen
+          customParams={{
+            query: imageUri,
+            queryType: QueryType.IMAGE,
+          }}
+        />
       </BottomSheet>
     </Box>
   );
@@ -86,9 +82,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 9999, // Very high z-index to ensure it's above everything
-    elevation: 9999, // For Android
-    pointerEvents: 'box-none', // This allows touches to pass through when no content
+    zIndex: 9999,
+    elevation: 9999,
+    pointerEvents: 'box-none',
   },
   handleStyle: {
     width: 50,

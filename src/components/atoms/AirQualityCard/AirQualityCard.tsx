@@ -1,6 +1,8 @@
 import {Box} from '@/components/styled/Box';
 import {Text} from '@/components/styled/Text';
 import {Row} from '@/components/styled/Row';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import {BASE_COLORS} from 'theme/elements';
 
 interface AirQualityCardProps {
   airQualityIndex?: number;
@@ -49,7 +51,7 @@ export const AirQualityCard: React.FC<AirQualityCardProps> = ({
           borderRadius={'full'}
           justifyContent="center"
           alignItems="center">
-          {/* <Icon name="waves" size={20} color={BASE_COLORS.primary} /> */}
+          <Icon name="waves" size={20} color={BASE_COLORS.primary} />
         </Box>
       </Row>
     </Box>

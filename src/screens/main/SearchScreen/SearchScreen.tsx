@@ -58,12 +58,6 @@ export const SearchScreen = () => {
     });
   };
 
-  const handleSearchPress = () => {
-    navigation.navigate('SearchResults', {
-      query: searchText,
-      queryType: QueryType.TEXT,
-    });
-  };
   return (
     <Box flex={1} paddingTop={top} backgroundColor={BASE_COLORS.primary}>
       <StatusBar
