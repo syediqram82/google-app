@@ -9,13 +9,15 @@ interface ImagesTabContentProps {
 }
 
 export const ImagesTabContent: React.FC<ImagesTabContentProps> = ({query}) => {
-  // Calculate column width for a 3-column grid
   const screenWidth = Dimensions.get('window').width;
-  const columnWidth = (screenWidth - 40) / 3; // 40 is for padding and margins
+  const columnWidth = (screenWidth - 40) / 3;
 
-  // Mock image data for demonstration
   const images = [
-    {id: '1', url: 'https://via.placeholder.com/150', title: 'Test image 1'},
+    {
+      id: '1',
+      url: 'https://unsplash.com/photos/MGaFENpDCsw',
+      title: 'Test image 1',
+    },
     {id: '2', url: 'https://via.placeholder.com/150', title: 'Test image 2'},
     {id: '3', url: 'https://via.placeholder.com/150', title: 'Test image 3'},
     {id: '4', url: 'https://via.placeholder.com/150', title: 'Test image 4'},

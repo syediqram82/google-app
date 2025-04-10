@@ -10,9 +10,15 @@ import {
   SearchHistoryItem,
   TrendingItem,
 } from './components/SearchList';
+import {
+  QueryType,
+  SearchStackParamList,
+} from '@/navigation/StackParamList/RootStackNavigator';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export const SearchScreen = () => {
-  const navigation = useNavigation();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<SearchStackParamList>>();
   const [searchText, setSearchText] = useState('');
   const {top} = useSafeAreaInsets();
 
@@ -46,9 +52,18 @@ export const SearchScreen = () => {
 
   const handleItemPress = (query: string) => {
     setSearchText(query);
-    console.log('Search for:', query);
+    navigation.navigate('SearchResults', {
+      query: searchText,
+      queryType: QueryType.TEXT,
+    });
   };
 
+  const handleSearchPress = () => {
+    navigation.navigate('SearchResults', {
+      query: searchText,
+      queryType: QueryType.TEXT,
+    });
+  };
   return (
     <Box flex={1} paddingTop={top} backgroundColor={BASE_COLORS.primary}>
       <StatusBar
@@ -61,7 +76,7 @@ export const SearchScreen = () => {
         onChangeText={setSearchText}
         onBackPress={handleBack}
         variant="standard"
-        type={'TEXT'}
+        type={QueryType.TEXT}
       />
 
       <SearchList

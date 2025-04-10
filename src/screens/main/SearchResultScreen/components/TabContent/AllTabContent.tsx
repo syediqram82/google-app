@@ -3,9 +3,11 @@ import {ScrollView, StyleSheet} from 'react-native';
 import {Text} from '@/components/styled/Text';
 import {Box} from '@/components/styled/Box';
 import {BASE_COLORS} from 'theme/elements';
+import {QueryType} from '@/navigation/StackParamList/RootStackNavigator';
 
 interface AllTabContentProps {
   query: string;
+  queryType: QueryType;
 }
 
 export const AllTabContent: React.FC<AllTabContentProps> = ({query}) => {

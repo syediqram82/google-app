@@ -19,7 +19,10 @@ type TabRoute = {
   title: string;
 };
 
-export const SearchTabView: React.FC<SearchTabViewProps> = ({query}) => {
+export const SearchTabView: React.FC<SearchTabViewProps> = ({
+  query,
+  queryType,
+}) => {
   const [routes] = useState<TabRoute[]>([
     {key: 'all', title: 'All'},
     {key: 'images', title: 'Images'},
@@ -29,12 +32,10 @@ export const SearchTabView: React.FC<SearchTabViewProps> = ({query}) => {
     {key: 'forums', title: 'Forums'},
   ]);
 
-  // Track the current index
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(queryType === QueryType.IMAGE ? 1 : 0);
 
-  // Render the scene for each tab
   const renderScene = SceneMap({
-    all: () => <AllTabContent query={query} />,
+    all: () => <AllTabContent query={query} queryType={queryType} />,
     images: () => <ImagesTabContent query={query} />,
     videos: () => <EmptyTabContent tabName="Videos" query={query} />,
     shopping: () => <EmptyTabContent tabName="Shopping" query={query} />,
@@ -42,7 +43,6 @@ export const SearchTabView: React.FC<SearchTabViewProps> = ({query}) => {
     forums: () => <EmptyTabContent tabName="Forums" query={query} />,
   });
 
-  // Create a custom tab bar from scratch
   const renderTabBar = () => {
     return (
       <Box backgroundColor={BASE_COLORS.primary}>

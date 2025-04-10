@@ -79,7 +79,6 @@ export const SearchList: React.FC<SearchListProps> = ({
   ];
 
   const renderListItem = ({item}: {item: any}) => {
-    // Render appropriate item based on type
     if (item.type === 'history') {
       return renderItem({item, type: 'history'});
     } else if (item.type === 'trending') {
