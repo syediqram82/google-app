@@ -1,97 +1,91 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Google App
 
-# Getting Started
+A React Native application that replicates Google's search experience with features like text search, voice search, and Google Lens functionality.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- Google-like search interface
+- Voice search capability
+- Google Lens for image-based search
+- Tab-based search results (All, Images, Videos, Shopping, News, Forums)
+- Modern, clean UI that follows Google's design language
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Prerequisites
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- Node.js (v14 or newer)
+- Yarn package manager
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
+- Java Development Kit (JDK)
 
-```sh
-# Using npm
-npm start
+## Getting Started
 
-# OR using Yarn
-yarn start
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone <repository-url>
+   cd google-app
+   ```
+
+2. Install dependencies:
+
+   ```
+   yarn
+   ```
+
+3. Set up environment:
+   - For iOS (macOS only):
+     ```
+     cd ios && pod install && cd ..
+     ```
+
+### Running the Application
+
+#### Android
+
+To run the app on an Android device or emulator:
+
 ```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
 yarn android
 ```
 
-### iOS
+Make sure you have an Android emulator running or a physical device connected with USB debugging enabled.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+#### iOS (macOS only)
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+To run the app on an iOS simulator:
 
-```sh
-bundle install
 ```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Development
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- To start the Metro bundler without building the app:
+  ```
+  yarn start
+  ```
 
-## Step 3: Modify your app
+## Troubleshooting
 
-Now that you have successfully run the app, let's make changes!
+### Common Issues
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- **Build failures**: Make sure you have the correct versions of Android SDK, JDK, and build tools installed.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+  ```
+  yarn clean
+  ```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+- **Metro bundler issues**: Try resetting the cache:
 
-## Congratulations! :tada:
+  ```
+  yarn start --reset-cache
+  ```
 
-You've successfully run and modified your React Native App. :partying_face:
+- **Device not connecting**: Ensure USB debugging is enabled and the device is authorized.
 
-### Now what?
+## License
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the LICENSE file for details.
