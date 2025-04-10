@@ -39,6 +39,8 @@ export const QuickLinksList = () => {
   return (
     <ThemedScrollView
       horizontal
+      display={'flex'}
+      justifyContent={'center'}
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{gap: 5, paddingHorizontal: 10}}
       marginTop={20}>

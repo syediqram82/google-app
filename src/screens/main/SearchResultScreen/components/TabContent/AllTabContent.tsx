@@ -49,8 +49,6 @@ export const AllTabContent: React.FC<AllTabContentProps> = ({query}) => {
   return (
     <ThemedScrollView
       flex={1}
-      borderWidth={1}
-      borderColor={'red'}
       backgroundColor={'primary'}
       showsVerticalScrollIndicator={false}>
       <Box paddingY="md">

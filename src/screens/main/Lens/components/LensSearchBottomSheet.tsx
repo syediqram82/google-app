@@ -13,7 +13,6 @@ import {SearchResultScreen} from '@/screens/main/SearchResultScreen/SearchResult
 import {Box} from '@/components/styled/Box';
 import {BASE_COLORS} from 'theme/elements';
 import {QueryType} from '@/navigation/StackParamList/RootStackNavigator';
-import {ThemedScrollView} from '@/components/styled/ScrollView';
 
 export interface LensSearchBottomSheetProps {
   imageUri: string | null;
