@@ -109,6 +109,7 @@ export const BottomSheet = forwardRef<BottomSheetRef, BottomSheetProps>(
       return {
         width: sheetWidthValue,
         marginHorizontal: marginHorizontal,
+        zIndex: 9999,
       };
     }, [sheetWidthValue, marginHorizontal]);
 

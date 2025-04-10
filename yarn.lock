@@ -6251,11 +6251,6 @@ react-native-vector-icons@^10.2.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
-react-native-vision-camera@^4.6.4:
-  version "4.6.4"
-  resolved "https://registry.yarnpkg.com/react-native-vision-camera/-/react-native-vision-camera-4.6.4.tgz#f1c51dda2c5d558ea0ec235e2401abf5efa46875"
-  integrity sha512-d998uTHsGJ9bTlsClgT37RK1sK7ZQekv5y6ylynds3vmdK6YbFQJUoi2cvMrFN4dp9qvSlCjEfwekjMIz3guQA==
-
 react-native-voice-to-text@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/react-native-voice-to-text/-/react-native-voice-to-text-0.1.4.tgz#d0f9d3852473681d82cc068dec09612e4c53bb57"

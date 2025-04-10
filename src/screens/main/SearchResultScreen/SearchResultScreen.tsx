@@ -8,17 +8,23 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {useState} from 'react';
 import {StatusBar} from 'react-native';
 
-export const SearchResultScreen = () => {
+interface SearchResultScreenProps {
+  customParams?: {
+    query: string;
+    queryType: QueryType;
+  };
+}
+
+export const SearchResultScreen = ({customParams}: SearchResultScreenProps) => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   const route = useRoute();
 
-  // Get query from route params or use a default
   const params = route.params as
     | {query: string; queryType: QueryType}
     | undefined;
-  const query = params?.query || 'test';
-  const queryType = params?.queryType || QueryType.TEXT;
+  const query = params?.query || customParams?.query;
+  const queryType = params?.queryType || customParams?.queryType;
 
   const [searchValue, setSearchValue] = useState(query);
 
@@ -37,14 +43,14 @@ export const SearchResultScreen = () => {
       />
 
       <SearchBar
-        value={searchValue}
+        value={searchValue || ''}
         onChangeText={setSearchValue}
         onBackPress={handleBackPress}
-        variant="standard"
+        variant="pill"
         type={queryType}
       />
 
-      <SearchTabView query={query} />
+      <SearchTabView query={query || ''} />
     </Box>
   );
 };
