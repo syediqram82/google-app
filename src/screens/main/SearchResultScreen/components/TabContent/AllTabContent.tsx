@@ -15,8 +15,6 @@ export const AllTabContent: React.FC<AllTabContentProps> = ({query}) => {
         <Text color="textPrimary" fontSize={18} fontFamily="medium">
           Search results for "{query}"
         </Text>
-
-        {/* Dictionary section from the screenshot */}
         <Box marginTop="lg">
           <Text color="textPrimary" fontSize={32} fontFamily="medium">
             Dictionary

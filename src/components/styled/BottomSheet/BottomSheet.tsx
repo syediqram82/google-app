@@ -71,12 +71,10 @@ export const BottomSheet = forwardRef<BottomSheetRef, BottomSheetProps>(
 
     const screenWidth = Dimensions.get('window').width;
     const marginHorizontal = useMemo(() => {
-      // Parse the percentage value from sheetWidthValue
       const widthPercentage = parseFloat(sheetWidthValue) / 100;
       return (screenWidth * (1 - widthPercentage)) / 2;
     }, [screenWidth, sheetWidthValue]);
 
-    // Expose methods to parent component
     useImperativeHandle(ref, () => ({
       open: () => {
         bottomSheetRef.current?.snapToIndex(0);

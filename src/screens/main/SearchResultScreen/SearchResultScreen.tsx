@@ -36,6 +36,7 @@ export const SearchResultScreen = ({customParams}: SearchResultScreenProps) => {
     <Box
       style={{flex: 1}}
       backgroundColor={BASE_COLORS.primary}
+      px={'xs'}
       paddingTop={top}>
       <StatusBar
         barStyle="light-content"
@@ -43,14 +44,17 @@ export const SearchResultScreen = ({customParams}: SearchResultScreenProps) => {
       />
 
       <SearchBar
-        value={searchValue || ''}
+        value={query || searchValue || ''}
         onChangeText={setSearchValue}
         onBackPress={handleBackPress}
         variant="pill"
         type={queryType}
       />
 
-      <SearchTabView query={query || ''} />
+      <SearchTabView
+        query={query || ''}
+        queryType={queryType || QueryType.TEXT}
+      />
     </Box>
   );
 };

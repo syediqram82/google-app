@@ -63,6 +63,7 @@ export const LensSearchBottomSheet = forwardRef<
         backgroundColor={BASE_COLORS.primary}
         enableExpandToFullScreen
         handleStyle={styles.handleStyle}
+        disablePanToClose={true}
         borderRadius={16}
         onChange={handleSheetChange}>
         <Box paddingBottom="lg" flex={1} backgroundColor={'primary'}>

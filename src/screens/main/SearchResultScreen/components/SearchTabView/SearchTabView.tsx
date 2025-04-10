@@ -7,9 +7,11 @@ import {Text} from '@/components/styled/Text';
 import {BASE_COLORS} from 'theme/elements';
 import {ThemedScrollView} from '@/components/styled/ScrollView';
 import {Button} from '@/components/styled/Button';
+import {QueryType} from '@/navigation/StackParamList/RootStackNavigator';
 
 interface SearchTabViewProps {
   query: string;
+  queryType: QueryType;
 }
 
 type TabRoute = {
@@ -18,7 +20,6 @@ type TabRoute = {
 };
 
 export const SearchTabView: React.FC<SearchTabViewProps> = ({query}) => {
-  // Define the initial routes - all tab options
   const [routes] = useState<TabRoute[]>([
     {key: 'all', title: 'All'},
     {key: 'images', title: 'Images'},

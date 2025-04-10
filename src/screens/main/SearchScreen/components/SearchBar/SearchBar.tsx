@@ -9,8 +9,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Button} from '@/components/styled/Button';
 import {CenterBox} from '@/components/styled/Box';
-import {Text} from '@/components/styled/Text';
 import {QueryType} from '@/navigation/StackParamList/RootStackNavigator';
+import {ThemedImage} from '@/components/styled/ThemedImage';
 
 export type SearchBarVariant = 'standard' | 'pill';
 
@@ -64,7 +64,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               placeholderTextColor={BASE_COLORS.textPrimary}
               value={value}
               onChangeText={onChangeText}
-              autoFocus
             />
           </View>
 
@@ -96,9 +95,25 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         height={60}>
         <CenterBox justifyContent={'flex-start'} style={{gap: 15}}>
           <Icon name={'search'} size={28} color={BASE_COLORS.textSecondary} />
-          <Text color={'textSecondary'} fontFamily={'regular'} fontSize={18}>
-            {type === 'TEXT' ? 'Search' : 'Search for images'}
-          </Text>
+          {type === QueryType.IMAGE ? (
+            <ThemedImage
+              source={{uri: value}}
+              $width={50}
+              $height={30}
+              resizeMode={'cover'}
+              borderRadius={5}
+            />
+          ) : (
+            <TextInput
+              style={styles.searchInput}
+              placeholder={
+                type === 'TEXT' ? 'Search...' : 'Search for images...'
+              }
+              placeholderTextColor={BASE_COLORS.textPrimary}
+              value={value}
+              onChangeText={onChangeText}
+            />
+          )}
         </CenterBox>
         <Row style={{gap: 10}}>
           <Button onPress={handleVoiceSearch}>
